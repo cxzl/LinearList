@@ -6,7 +6,7 @@ public class StackWithArray {
     //存储栈内容的数组
     private Object[] array;
 
-    public StackWithArray(int size) throws Exception {
+    public StackWithArray(int size){
         if(size < 0){
             throw new IllegalArgumentException("stack size must be greater or equal to 0");
         } else {
@@ -32,6 +32,7 @@ public class StackWithArray {
         if(isFull()){
             throw new IndexOutOfBoundsException("stack is full");
         }else {
+            //入栈直接把栈顶+1，并把新元素赋值给栈顶
             array[++top] = date;
         }
     }
@@ -44,6 +45,7 @@ public class StackWithArray {
         if(isEmpty()){
             throw new EmptyStackException();
         }else {
+            //出栈直接把栈顶-1
             return array[top--];
         }
     }

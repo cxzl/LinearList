@@ -48,7 +48,9 @@ public class StackWithLinked {
             throw new EmptyStackException();
         }
         Object object = topElement.getElement();
+        //栈顶指向的元素成为新栈顶
         topElement = topElement.next;
+        //栈的元素减一
         elementCount--;
         return object;
     }
